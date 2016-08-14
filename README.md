@@ -1,8 +1,9 @@
-# A LEMP vagrant machine
+# A LEMP vagrant machine (for Drupal)
 
 ## Introduction
 
-This project automates the setup of a LEMP development environment.
+This project automates the setup of a LEMP development environment for Drupal
+Forked from vesselinv/vagrant-lemp
 
 ## Requirements
 
