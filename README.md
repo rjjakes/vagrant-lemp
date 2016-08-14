@@ -3,6 +3,7 @@
 ## Introduction
 
 This project automates the setup of a LEMP development environment for Drupal
+
 Forked from vesselinv/vagrant-lemp
 
 ## Requirements

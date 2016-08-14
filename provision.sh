@@ -75,8 +75,20 @@ EOF
 sudo service nginx restart
 sudo service php5-fpm restart
 
-# start directory
-echo "cd /var/www" >> /home/vagrant/.bashrc
+# start directory and git bash in prompt
+sudo cat >> /home/vagrant/.bashrc <<'EOF'
+# Git branch in prompt.
+
+parse_git_branch() {
+
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+
+}
+
+export PS1="\u@\h \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
+
+cd /var/www
+EOF
 
 # fix php5-snmp
 sudo apt-get install snmp-mibs-downloader -y
@@ -98,3 +110,7 @@ sudo mv drush /usr/local/bin
 drush init -y
 source ~/.bashrc
 
+# git
+sudo apt-get install git -y
+
+echo "DONE"
