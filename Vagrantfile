@@ -49,5 +49,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
 
   # install some base packages
+  config.vm.hostname="dev"
   config.vm.provision :shell, path: "provision.sh"
 end
