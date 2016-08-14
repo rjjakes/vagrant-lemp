@@ -16,7 +16,7 @@ This project automates the setup of a LEMP development environment.
 
 Building the virtual machine is this easy:
 
-    host $ git clone https://github.com/vesselinv/vagrant-lemp.git
+    host $ git clone https://github.com/rjjakes/vagrant-lemp.git
     host $ cd vagrant-lemp
     host $ vagrant up --provision
 
@@ -35,7 +35,9 @@ Ports 80 and 3306 on guest and forwarded to 8080 and 33306 respectively.
 * MySQL
 * Nginx
 * php5-fpm
-* phpmyadmin
+* composer
+* coder
+* drush
 
 ## Recommended Workflow
 
@@ -45,10 +47,10 @@ The recommended workflow is
 
 * run within the virtual machine
 
-Your home folder is synced to `/home/vagrant/code` on the guest.
+Your home folder is synced to `/var/www` on the guest.
 
 ## Database
-* For mysql the default user is root: `mysql -u root`
+* For mysql the default user is root: `mysql -u root -proot`
 
 ## Tutorial
 
