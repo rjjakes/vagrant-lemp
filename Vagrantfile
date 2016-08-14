@@ -28,7 +28,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # argument is a set of non-required options.
   # config.vm.synced_folder "../data", "/vagrant_data"
   # config.vm.synced_folder('----localfolder-----', '/home/vagrant/code', :nfs => true)
-  config.vm.synced_folder '.', '/home/vagrant/code', nfs: true
+  config.vm.synced_folder '~/Projects', '/var/www', nfs: true
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -39,7 +39,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     v.gui = false
 
     # Use VBoxManage to customize the VM. For example to change memory:
-    v.customize ["modifyvm", :id, "--memory",               "512"]
+    v.customize ["modifyvm", :id, "--memory",               "2048"]
+    v.customize ["modifyvm", :id, "--cpus",		    "2"]
     v.customize ["modifyvm", :id, "--cpuexecutioncap",      "95"]
     v.customize ["modifyvm", :id, "--natdnshostresolver1",  "on"]
     v.customize ["modifyvm", :id, "--natdnsproxy1",         "on"]
